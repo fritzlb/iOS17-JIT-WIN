@@ -1,6 +1,6 @@
 # iOS17-JIT-WIN
 Enable JIT on iOS 17 using a windows PC  
-tested on windows 11 witn an ipad on 17.3.1
+tested on windows 11 with an ipad on 17.3.1
 # SETUP
 Install python and pymobiledevice3  
 `pip install pymobiledevice3`  
