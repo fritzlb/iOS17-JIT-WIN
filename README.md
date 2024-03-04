@@ -7,5 +7,5 @@ Install python and pymobiledevice3
 Download/Clone jit_enabler_better.py into a working directory
 Get a copy of llvm-mingw-20231128-msvcrt-x86_64 (https://github.com/mstorsjo/llvm-mingw/releases) and place the folder that directly contains "bin" into your working directory. 
 # Usage
-`python jit_enabler_better bundle_id`  
+`python jit_enabler_better.py bundle_id`  
 where bundle ID can be obtained e.g. inside AltStore under 'View App IDs'. If the correct one for your app doesn't show up, refresh your apps and try again.
