@@ -10,3 +10,6 @@ where bundle ID can be obtained e.g. inside AltStore under 'View App IDs'. If th
 
 # Issues
 If you run into any problems or if anything in my instructions is unclear, feel free to open an issue :)
+
+# License
+Feel free to do whatever you want with my code. Please note that everything installed by install.bat might be under other licenses. Also, there's absolutely no warranty or anything.
