@@ -10,7 +10,10 @@ Run `python jit_enabler_better.py bundle_id` in an admin terminal in the project
 where bundle ID can be obtained e.g. inside AltStore under 'View App IDs'. If the correct one for your app doesn't show up, refresh your apps and try again.
 
 # Issues
-If you run into any problems or if anything in my instructions is unclear, feel free to open an issue :)
+If you run into any problems or if anything in my instructions is unclear, feel free to open an issue :)  
+Here are some common troubleshooting tips though:  
+- Reboot your PC. Use the restart button, shutting down and starting again isn't the same.
+- make sure to use a high quality cable. The default apple one should be fine. 
 
 # License
 Feel free to do whatever you want with my code. Please note that everything installed by install.bat might be under other licenses. Also, there's absolutely no warranty or anything.
