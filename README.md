@@ -1,7 +1,7 @@
 # iOS17-JIT-WIN
 Enable JIT on iOS 17 using a windows PC  
 tested on windows 11 with an ipad on 17.3.1  
-Video guide: https://www.youtube.com/watch?v=xtSnHTDtX_M (outdated)  
+Video guide: https://youtu.be/MLHa2JLuk3Y 
 # SETUP
 Install python from https://www.python.org/downloads/. Make sure to add it to your PATH.  
 Download/Clone this repo (green button -> download zip), extract the zip whereever you'd like and run install.bat by double clicking it.  
