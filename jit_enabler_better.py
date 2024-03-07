@@ -13,6 +13,7 @@ def print_error(errorcode, description):
 
 
 if __name__ == "__main__":
+    #read arguments
     print("Getting bundle ID...")
     args = sys.argv
     try:
@@ -24,6 +25,7 @@ if __name__ == "__main__":
         sys.exit()
     print("Got bundle ID:", bundle_id)
     print("starting tunnel to device...")
+    print("This might take a while. In case it freezes, either close this window and kill every python process in task manager or simply reboot your PC.")
     #run pymobiledevice3 as subprocess, exit and log errors if tunnel crashes
     tunnel_process = subprocess.Popen("python -m pymobiledevice3 remote start-tunnel --script-mode", stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     atexit.register(exit_func, tunnel_process)
@@ -35,27 +37,64 @@ if __name__ == "__main__":
         if tunnel_process.poll() is not None:
             error = tunnel_process.stderr.readlines()
             if error:
-                print_error("Error opening a tunnel.", error)
+                not_connected = None
+                admin_error = None
+                for i in range(len(error)):
+                    if (error[i].find(b'connected') > 0):
+                        not_connected = True
+                    if (error[i].find(b'admin') > 0):
+                        admin_error = True
+                if not_connected:
+                    print_error("It seems like your device isn't connected.", error)
+                elif admin_error:
+                    print_error("It seems like you're not running this script as admin, which is required.", error)
+                else:
+                    print_error("Error opening a tunnel.", error)
                 sys.exit()
             break
     rsd_str = str(rsd_val)
     print("Sucessfully created tunnel: " + rsd_str)
 
+    #mount diskimage
+
+    print("Manually trying to mount DeveloperDiskImage (this seems to prevent errors on some systems)...")
+    dev_img_proc = subprocess.Popen("python -m pymobiledevice3 mounter auto-mount", stderr = subprocess.PIPE)
+    ret_val = dev_img_proc.communicate()[1].decode()
+    if ret_val.find("success") > 0:
+        print("Mounted Disk image.")
+    elif ret_val.find("already") > 0:
+        print("Diskimage already mounted.")
+    else:
+        print_error("Error mounting DiskImage", ret_val)
+        sys.exit()
+    
+
     #launch proc
     cmd = "python -m pymobiledevice3 developer dvt launch " + bundle_id + " --rsd " + rsd_str
     print("Starting app...")
-    launch_proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
-    pid = launch_proc.communicate()[0].decode().replace("Process launched with pid ", "").replace("\r\n", "")
+    launch_proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    ret_val = launch_proc.communicate()
+    if ret_val[1].decode().replace("\r\n", "") != "": #display error in case starting app fails
+        print_error("Error launching the app. Did you specify the correct bundle ID?", ret_val[1].decode())
+        sys.exit()
+    pid = ret_val[0].decode().replace("Process launched with pid ", "").replace("\r\n", "")
     print("Started app. PID: " + pid)
+
+    # debug server
 
     print("Starting debug server...")
     cmd = "python -m pymobiledevice3 developer debugserver start-server" + " --rsd " + rsd_str
-    debug_proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
-    debug_info = debug_proc.communicate()[0].decode().replace("\r\nFollow the following connections steps from LLDB:\r\n\r\n(lldb) platform select remote-ios\r\n(lldb) target create /path/to/local/application.app\r\n(lldb) script lldb.target.module[0].SetPlatformFileSpec(lldb.SBFileSpec('/private/var/containers/Bundle/Application/<APP-UUID>/application.app'))\r\n(lldb) process connect connect://", "").replace("   <-- ACTUAL CONNECTION DETAILS!\r\n(lldb) process launch\r\n\r\n","")
+    debug_proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+    ret_val = debug_proc.communicate()
+    debug_info = ret_val[0].decode().replace("\r\nFollow the following connections steps from LLDB:\r\n\r\n(lldb) platform select remote-ios\r\n(lldb) target create /path/to/local/application.app\r\n(lldb) script lldb.target.module[0].SetPlatformFileSpec(lldb.SBFileSpec('/private/var/containers/Bundle/Application/<APP-UUID>/application.app'))\r\n(lldb) process connect connect://", "").replace("   <-- ACTUAL CONNECTION DETAILS!\r\n(lldb) process launch\r\n\r\n","")
+    if ret_val[1].decode() != "":
+        print_error("debug server error", ret_val[1].decode())
+        sys.exit()
     print("Started debug server with connection details: " + debug_info)
 
     #attach and deattach lldb
     print("Run debugging commands...")
+    print("This might take a few minutes.")
     debug_adress = debug_info
     cmdfile_path = "cmdfile.txt"
     try:
