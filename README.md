@@ -14,7 +14,10 @@ where bundle ID can be obtained e.g. inside AltStore under 'View App IDs'. If th
 If you run into any problems or if anything in my instructions is unclear, feel free to open an issue :)  
 Here are some common troubleshooting tips though:  
 - Reboot your PC. Use the restart button, shutting down and starting again isn't the same.
-- make sure to use a high quality cable. The default apple one should be fine. 
+- make sure to use a high quality cable. The default apple one should be fine.
+- the first time running the script might prompt a driver installation (WeTest USB or sth). Currently the only way to get it to work is to install it.
+- if windows firewall interferes, allow everything.
+- if you're editing shortcut.bat with the default windows editor, it might happen that Defender thinks a temporary file created by the editor itself is dangerous. Idk why, as a workaround I'd recommend to use something like notepad++
 
 # License
 Feel free to do whatever you want with my code. Please note that everything installed by install.bat might be under other licenses. Also, there's absolutely no warranty or anything.
