@@ -7,8 +7,8 @@ Install python from https://www.python.org/downloads/. Make sure to add it to yo
 Download/Clone this repo (green button -> download zip), extract the zip whereever you'd like and run install.bat by double clicking it.  
 # Usage
 Open an admin terminal by double clicking "open terminal here.bat".  
-Run `python jit_enabler_better.py bundle_id` by typing it into the terminal window and finish the command by pressing enter.  
-where bundle ID can be obtained e.g. inside AltStore under 'View App IDs'. If the correct one for your app doesn't show up, refresh your apps and try again.
+Run `python jit_enabler_better.py {bundle_id}` by typing it into the terminal window and finish the command by pressing enter.  
+Make sure to replace {bundle_ID} with your actual bundle ID, which can be obtained e.g. inside AltStore under 'View App IDs'. If the correct one for your app doesn't show up, refresh your apps and try again.
 
 # Issues
 If you run into any problems or if anything in my instructions is unclear, feel free to open an issue with the FULL error message :)  
@@ -23,7 +23,7 @@ Here are some common troubleshooting tips though:
 - Connect your PC to the internet, that's required to mount the PersonalizedDeveloperDiskImage
 
 # Tips
-- Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. You'll find everything you need on their website :)
+- Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. For me, the ios build from this website worked: https://github.com/PojavLauncherTeam/PojavLauncher_iOS/actions/runs/7498475877
 - I don't know anything about iOS 17.4 support because I didn't upgrade yet. If you tested it, please let me know :)
 - if you have an issue, please provide the full terminal output, this makes helping a lot easier and also more fun
 
