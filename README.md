@@ -31,4 +31,11 @@ Here are some common troubleshooting tips though:
 - if you have an issue, please provide the full terminal output, this makes helping a lot easier and also more fun
 
 # License
-Feel free to do whatever you want with my code. Please note that everything installed by install.bat might be under other licenses. Also, there's absolutely no warranty or anything.
+Feel free to do whatever you want with my code. Please note that everything installed by install.bat is under other licenses. Also, there's absolutely no warranty or anything.
+
+# Credits
+This script relies heavily on pymobiledevice3 for iOS device communication. Thank you especially to doronz88!  
+Check out the pymobildevice GitHub Repository here: https://github.com/doronz88/pymobiledevice3  
+  
+For attaching a debugger, this script uses llvm-mingw. Thank you to everyone involved there!  
+Github: https://github.com/mstorsjo/llvm-mingw
