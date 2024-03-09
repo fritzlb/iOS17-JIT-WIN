@@ -1,7 +1,10 @@
 # iOS17-JIT-WIN
 Enable JIT on iOS 17 using a windows PC  
-tested on windows 11 with an ipad on 17.3.1  
-Video guide: https://youtu.be/MLHa2JLuk3Y 
+Video guide: https://youtu.be/MLHa2JLuk3Y  
+Tested with Windows 11 and:
+- iOS 17.3.1
+- iOS 17.4  
+
 # SETUP
 Install python from https://www.python.org/downloads/. Make sure to add it to your PATH.  
 Download/Clone this repo (green button -> download zip), extract the zip whereever you'd like and run install.bat by double clicking it.  
@@ -14,6 +17,7 @@ Make sure to replace {bundle_ID} with your actual bundle ID, which can be obtain
 If you run into any problems or if anything in my instructions is unclear, feel free to open an issue with the FULL error message :)  
 Here are some common troubleshooting tips though:  
 - Reboot your PC. Use the restart button, shutting down and starting again isn't the same.
+- Extract the zip file before running install.bat.
 - make sure to use a high quality cable. The default apple one should be fine.
 - the first time running the script might prompt a driver installation (WeTest USB or sth). Currently the only way to get it to work is to install it.
 - if windows firewall interferes, allow everything.
@@ -23,8 +27,7 @@ Here are some common troubleshooting tips though:
 - Connect your PC to the internet, that's required to mount the PersonalizedDeveloperDiskImage
 
 # Tips
-- Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. For me, the ios build from this website worked: https://github.com/PojavLauncherTeam/PojavLauncher_iOS/actions/runs/7498475877
-- I don't know anything about iOS 17.4 support because I didn't upgrade yet. If you tested it, please let me know :)
+- Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. For me, the ios build (NOT the slimmed version!) from this website worked: https://github.com/PojavLauncherTeam/PojavLauncher_iOS/actions/runs/7498475877
 - if you have an issue, please provide the full terminal output, this makes helping a lot easier and also more fun
 
 # License
