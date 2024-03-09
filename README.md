@@ -22,5 +22,10 @@ Here are some common troubleshooting tips though:
 - make sure your device is unlocked
 - Connect your PC to the internet, that's required to mount the PersonalizedDeveloperDiskImage
 
+# Tips
+- Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. You'll find everything you need on their website :)
+- I don't know anything about iOS 17.4 support because I didn't upgrade yet. If you tested it, please let me know :)
+- if you have an issue, please provide the full terminal output, this makes helping a lot easier and also more fun
+
 # License
 Feel free to do whatever you want with my code. Please note that everything installed by install.bat might be under other licenses. Also, there's absolutely no warranty or anything.
