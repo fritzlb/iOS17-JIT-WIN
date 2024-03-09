@@ -40,9 +40,9 @@ if __name__ == "__main__":
                 not_connected = None
                 admin_error = None
                 for i in range(len(error)):
-                    if (error[i].find(b'connected') > 0):
+                    if (error[i].find(b'connected') > -1):
                         not_connected = True
-                    if (error[i].find(b'admin') > 0):
+                    if (error[i].find(b'admin') > -1):
                         admin_error = True
                 if not_connected:
                     print_error("It seems like your device isn't connected.", error)
@@ -60,9 +60,9 @@ if __name__ == "__main__":
     print("Manually trying to mount DeveloperDiskImage (this seems to prevent errors on some systems)...")
     dev_img_proc = subprocess.Popen("python -m pymobiledevice3 mounter auto-mount", stderr = subprocess.PIPE)
     ret_val = dev_img_proc.communicate()[1].decode()
-    if ret_val.find("success") > 0:
+    if ret_val.find("success") > -1:
         print("Mounted Disk image.")
-    elif ret_val.find("already") > 0:
+    elif ret_val.find("already") > -1:
         print("Diskimage already mounted.")
     else:
         print_error("Error mounting DiskImage", ret_val)
