@@ -22,6 +22,7 @@ Make sure to replace {bundle_ID} with your actual bundle ID, which can be obtain
 If you run into any problems or if anything in my instructions is unclear, feel free to open an issue with the FULL error message :)  
 Here are some common troubleshooting tips though:  
 - Reboot your PC. Use the restart button, shutting down and starting again isn't the same.
+- If you get an error while running debug commands, try executing install_slow.bat. It'll redownload everything and use a decompression method that seems to be a little more reliable but a lot slower.
 - Extract the zip file before running install.bat.
 - make sure to use a high quality cable. The default apple one should be fine.
 - the first time running the script might prompt a driver installation (WeTest USB or sth). Currently the only way to get it to work is to install it.
