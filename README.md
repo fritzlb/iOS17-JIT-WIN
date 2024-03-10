@@ -1,13 +1,18 @@
 # iOS17-JIT-WIN
 Enable JIT on iOS 17 using a windows PC  
+  
 Video guide: https://youtu.be/MLHa2JLuk3Y  
-Tested with Windows 11 and:
-- iOS 17.3.1
-- iOS 17.4  
+  
+Tested with Windows 11 and iOS 17.3.1 as well as 17.4.  
+The following apps have been tested by me and do work:
+- PojavLauncher (pay attention to the tips section down below!)
+- UTM (AltStore release version)
+- DolphiniOS (AltStore release version)
 
 # SETUP
 Install python from https://www.python.org/downloads/. Make sure to add it to your PATH.  
 Download/Clone this repo (green button -> download zip), extract the zip whereever you'd like and run install.bat by double clicking it.  
+
 # Usage
 Open an admin terminal by double clicking "open terminal here.bat".  
 Run `python jit_enabler_better.py {bundle_id}` by typing it into the terminal window and finish the command by pressing enter.  
@@ -28,7 +33,7 @@ Here are some common troubleshooting tips though:
 
 # Tips
 - Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. For me, the ios build (NOT the slimmed version!) from this website worked: https://github.com/PojavLauncherTeam/PojavLauncher_iOS/actions/runs/7498475877
-- if you have an issue, please provide the full terminal output, this makes helping a lot easier and also more fun
+- if you have an issue, please provide the full terminal output, this makes helping a lot easier and also more fun. I'll close any bug reports without this.
 
 # License
 Because of the integration of pymobiledevice3 I pretty much have no choice but to license this under GPLv3.
