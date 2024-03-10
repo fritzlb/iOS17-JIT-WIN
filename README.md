@@ -22,6 +22,8 @@ Make sure to replace {bundle_ID} with your actual bundle ID, which can be obtain
 If you run into any problems or if anything in my instructions is unclear, feel free to open an issue with the FULL error message :)  
 Here are some common troubleshooting tips though:  
 - Reboot your PC. Use the restart button, shutting down and starting again isn't the same.
+- If there's an error like "Python was not found" follow the installation instructions and install python.
+- If there's an error like "pymobiledevice3 not found", you probably forgot executing install.bat. Do that (again).
 - If you get an error while running debug commands, try executing install_slow.bat. It'll redownload everything and use a decompression method that seems to be a little more reliable but a lot slower.
 - Extract the zip file before running install.bat.
 - make sure to use a high quality cable. The default apple one should be fine.
@@ -31,6 +33,7 @@ Here are some common troubleshooting tips though:
 - Install a copy of iTunes directly from Apple, not the MS Store
 - make sure your device is unlocked
 - Connect your PC to the internet, that's required to mount the PersonalizedDeveloperDiskImage
+- Some PC devices have software/bios settings that automatically disable wifi if a wired connection is detected. Disable that software if you're running into issues where your wifi turns off.
 
 # Tips
 - Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. For me, the ios build (NOT the slimmed version!) from this website worked: https://github.com/PojavLauncherTeam/PojavLauncher_iOS/actions/runs/7498475877
