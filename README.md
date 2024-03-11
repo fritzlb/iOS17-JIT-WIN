@@ -30,6 +30,7 @@ Here are some common troubleshooting tips though:
 - make sure to use a high quality cable. The default apple one should be fine.
 - the first time running the script might prompt a driver installation (WeTest USB or sth). Currently the only way to get it to work is to install it.
 - if windows firewall interferes, allow everything.
+- anti-virus software is known to cause issues with this. Consider deactivating it.
 - if you're editing shortcut.bat with the default windows editor, it might happen that Defender thinks a temporary file created by the editor itself is dangerous. Idk why, as a workaround I'd recommend to use something like notepad++
 - Install a copy of iTunes directly from Apple, not the MS Store
 - make sure your device is unlocked
