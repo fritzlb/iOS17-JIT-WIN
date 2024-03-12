@@ -17,6 +17,7 @@ Download/Clone this repo (green button -> download zip), extract the zip whereev
 Open an admin terminal by double clicking "open terminal here.bat".  
 Run `python jit_enabler_better.py {bundle_id}` by typing it into the terminal window and finish the command by pressing enter.  
 Make sure to replace {bundle_ID} with your actual bundle ID, which can be obtained e.g. inside AltStore under 'View App IDs'. If the correct one for your app doesn't show up, refresh your apps and try again.  
+If you're using sideloadly, you can set a custom bundle ID to make things easy for you. You'll find the according settings under "advanced".  
 Be aware that simply googling the bundle ID will not work because your sideloding software will modify it. This is because every bundle ID gets registered with Apple and then belongs to that particular Xcode team, therefore it can't be used by anyone else. 
 
 # Issues
