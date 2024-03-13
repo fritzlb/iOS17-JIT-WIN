@@ -21,7 +21,8 @@ If you're using sideloadly, you can set a custom bundle ID to make things easy f
 Be aware that simply googling the bundle ID will not work because your sideloding software will modify it. This is because every bundle ID gets registered with Apple and then belongs to that particular Xcode team, therefore it can't be used by anyone else. 
 
 # Issues
-If you run into any problems or if anything in my instructions is unclear, feel free to open an issue with the FULL error message :)  
+If you do experience issues with this, please run the script in debug mode and create an issue with the terminal output. To start in debug mode, simply add "True" as another argument to the command, like this:  
+`python jit_enabler_better.py {bundle_id} True` replacing {bundle_id} with your bundle ID of course. :)  
 Here are some common troubleshooting tips though:  
 - Reboot your PC. Use the restart button, shutting down and starting again isn't the same.
 - If there's an error like "Python was not found" follow the installation instructions and install python.
