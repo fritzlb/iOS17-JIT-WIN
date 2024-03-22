@@ -1,6 +1,6 @@
 # iOS17-JIT-WIN
 Enable JIT on iOS 17 using a windows PC  
-  
+
 Video guide: https://youtu.be/MLHa2JLuk3Y  
   
 Tested with Windows 11 and iOS 17.3.1 as well as 17.4.  
@@ -8,6 +8,11 @@ The following apps have been tested by me and do work:
 - PojavLauncher (pay attention to the tips section down below!)
 - UTM (AltStore release version)
 - DolphiniOS (pay attention to the tips section down below!)
+
+# Requirements
+- Windows 11 PC (probably 10 works too, I didn't test that)
+- iOS device running iOS 17+
+- Sideloaded App requiring JIT that's been sideloaded using a supported method (AltStore, Sideloadly, other methods using developer certificates)
 
 # SETUP
 Install python from https://www.python.org/downloads/. Make sure to add it to your PATH.  
@@ -27,7 +32,7 @@ Here are some common troubleshooting tips though:
 - Reboot your PC. Use the restart button, shutting down and starting again isn't the same.
 - If there's an error like "Python was not found" follow the installation instructions and install python.
 - If there's an error like "pymobiledevice3 not found", you probably forgot executing install.bat. Do that (again).
-- If you get an error while running debug commands, try executing install_slow.bat. It'll redownload everything and use a decompression method that seems to be a little more reliable but a lot slower.
+- If you get an error while running debug commands (usually sth like file not found), try executing install_slow.bat. It'll redownload everything and use a decompression method that seems to be a little more reliable but a lot slower.
 - Extract the zip file before running install.bat.
 - make sure to use a high quality cable. The default apple one should be fine.
 - the first time running the script might prompt a driver installation (WeTest USB or sth). Currently the only way to get it to work is to install it.
@@ -38,6 +43,8 @@ Here are some common troubleshooting tips though:
 - make sure your device is unlocked
 - Connect your PC to the internet, that's required to mount the PersonalizedDeveloperDiskImage
 - Some PC devices have software/bios settings that automatically disable wifi if a wired connection is detected. Disable that software if you're running into issues where your wifi turns off.
+- If the script says done but you don't have JIT enabled it's likely you didn't use a supported install method. For JIT to work you do need an app sideloaded using a dev cert, this is a limitation by Apple.
+- Currently, there are a few reports with the script saying "Device not connected" even though it is. Apparently there is a possibility to fix that by uninstalling the USB NCM drivers in device manager, they should reinstall once you reconnect your device. As I can't reproduce the error it's pretty hard to debug. If you do have any information regarding this, please participate in the discussion under issues. 
 
 # Tips
 - Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. For me, the ios build (NOT the slimmed version!) from this website worked: https://github.com/PojavLauncherTeam/PojavLauncher_iOS/actions/runs/7498475877
@@ -53,3 +60,6 @@ Check out the pymobildevice3 GitHub Repository here: https://github.com/doronz88
   
 For attaching a debugger, this script uses llvm-mingw. Thank you to everyone involved there!  
 Github: https://github.com/mstorsjo/llvm-mingw
+
+    
+This project is not associated with anyone, especially not with Apple, pymobiledevice3 or llvm-mingw. 
