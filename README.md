@@ -44,7 +44,7 @@ Here are some common troubleshooting tips though:
 - Connect your PC to the internet, that's required to mount the PersonalizedDeveloperDiskImage
 - Some PC devices have software/bios settings that automatically disable wifi if a wired connection is detected. Disable that software if you're running into issues where your wifi turns off.
 - If the script says done but you don't have JIT enabled it's likely you didn't use a supported install method. For JIT to work you do need an app sideloaded using a dev cert, this is a limitation by Apple.
-- Currently, there are a few reports with the script saying "Device not connected" even though it is. Apparently there is a possibility to fix that by uninstalling the USB NCM drivers in device manager, they should reinstall once you reconnect your device. As I can't reproduce the error it's pretty hard to debug. If you do have any information regarding this, please participate in the discussion under issues. 
+- Currently, there are a few reports with the script saying "Device not connected" even though it is. For some users ejecting the device through iTunes was enough, for others uninstalling the USB ncm drivers and reconnecting the cable fixed it. As I can't reproduce the error it's pretty hard to debug. If you do have any information regarding this, please participate in the discussion under issues. 
 
 # Tips
 - Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. For me, the ios build (NOT the slimmed version!) from this website worked: https://github.com/PojavLauncherTeam/PojavLauncher_iOS/actions/runs/7498475877
