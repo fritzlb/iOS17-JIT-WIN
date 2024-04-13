@@ -66,7 +66,7 @@ if __name__ == "__main__":
     #mount diskimage
 
     print("Manually trying to mount DeveloperDiskImage (this seems to prevent errors on some systems)...")
-    dev_img_proc = subprocess.Popen("python -m pymobiledevice3 mounter auto-mount", stderr = subprocess.PIPE)
+    dev_img_proc = subprocess.Popen("python -m pymobiledevice3 mounter auto-mount --rsd " + rsd_str, stderr = subprocess.PIPE)
     ret_val = dev_img_proc.communicate()[1].decode()
     if debug:
         print(ret_val)
