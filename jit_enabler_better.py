@@ -70,6 +70,12 @@ if __name__ == "__main__":
     ret_val = dev_img_proc.communicate()[1].decode()
     if debug:
         print(ret_val)
+    if ret_val.find("usbmuxd") > -1:
+        print("Mounting DiskImage failed. Trying the alternative method...")
+        dev_img_proc_alt = subprocess.Popen("python -m pymobiledevice3 mounter auto-mount --rsd " + rsd_str, stderr=subprocess.PIPE)
+        ret_val = dev_img_proc_alt.communicate()[1].decode()
+        if debug:
+            print(ret_val)
     if ret_val.find("success") > -1:
         print("Mounted Disk image.")
     elif ret_val.find("already") > -1:
