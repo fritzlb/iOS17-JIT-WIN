@@ -45,6 +45,7 @@ Here are some common troubleshooting tips though:
 - Some PC devices have software/bios settings that automatically disable wifi if a wired connection is detected. Disable that software if you're running into issues where your wifi turns off.
 - If the script says done but you don't have JIT enabled it's likely you didn't use a supported install method. For JIT to work you do need an app sideloaded using a dev cert, this is a limitation by Apple.
 - Currently, there are a few reports with the script saying "Device not connected" even though it is. Usually this is driver related. Here is all the information I got on how to fix that: https://github.com/fritzlb/iOS17-JIT-WIN/issues/8#issuecomment-2024064032
+- China's 'Great Firewall' is known to cause problems during install. The script downloads a bunch of dependencies and apparently someone doesn't like that. There's nothing I can do about that, sorry.
 
 # Tips
 - Because many people had issues with this: the release version of Pojavlauncher for iOS doesn't support MC 1.20. Use a lower MC version or try out a developer build of Pojavlauncher. For me, the ios build (NOT the slimmed version!) from this website worked: https://github.com/PojavLauncherTeam/PojavLauncher_iOS/actions/runs/7498475877
