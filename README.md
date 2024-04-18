@@ -10,7 +10,7 @@ The following apps have been tested by me and do work:
 - DolphiniOS (pay attention to the tips section down below!)
 
 # Requirements
-- Windows 11 PC (probably 10 works too, I didn't test that)
+- Windows 11 PC (probably a more or less recent (v2004+, from 2020+) build of windows 10 works too, I didn't test that)
 - iOS device running iOS 17+
 - Sideloaded App requiring JIT that's been sideloaded using a supported method (AltStore, Sideloadly, other methods using developer certificates)
 
