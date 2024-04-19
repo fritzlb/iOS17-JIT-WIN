@@ -67,13 +67,13 @@ if __name__ == "__main__":
 
     print("Manually trying to mount DeveloperDiskImage (this seems to prevent errors on some systems)...")
     dev_img_proc = subprocess.Popen("python -m pymobiledevice3 mounter auto-mount", stderr = subprocess.PIPE)
-    ret_val = dev_img_proc.communicate()[1].decode()
+    ret_val = dev_img_proc.communicate()[1].decode(errors='replace')
     if debug:
         print(ret_val)
     if ret_val.find("usbmuxd") > -1:
         print("Mounting DiskImage failed. Trying the alternative method...")
         dev_img_proc_alt = subprocess.Popen("python -m pymobiledevice3 mounter auto-mount --rsd " + rsd_str, stderr=subprocess.PIPE)
-        ret_val = dev_img_proc_alt.communicate()[1].decode()
+        ret_val = dev_img_proc_alt.communicate()[1].decode(errors='replace')
         if debug:
             print(ret_val)
     if ret_val.find("success") > -1:
@@ -93,14 +93,14 @@ if __name__ == "__main__":
     if debug:
         print(ret_val)
     try:
-        if_cond = ret_val[1].decode().replace("\r\n", "")
+        if_cond = ret_val[1].decode(errors='replace').replace("\r\n", "")
     except:
         print_error("Unknown error.", ret_val)
         sys.exit()
     if if_cond != "": #display error in case starting app fails
         print_error("Error launching the app. Did you specify the correct bundle ID?", ret_val[1].decode())
         sys.exit()
-    pid = ret_val[0].decode().replace("Process launched with pid ", "").replace("\r\n", "")
+    pid = ret_val[0].decode(errors='replace').replace("Process launched with pid ", "").replace("\r\n", "")
     print("Started app. PID: " + pid)
 
     # debug server
@@ -112,8 +112,8 @@ if __name__ == "__main__":
     if debug:
         print(ret_val)
     debug_info = ret_val[0].decode().replace("\r\nFollow the following connections steps from LLDB:\r\n\r\n(lldb) platform select remote-ios\r\n(lldb) target create /path/to/local/application.app\r\n(lldb) script lldb.target.module[0].SetPlatformFileSpec(lldb.SBFileSpec('/private/var/containers/Bundle/Application/<APP-UUID>/application.app'))\r\n(lldb) process connect connect://", "").replace("   <-- ACTUAL CONNECTION DETAILS!\r\n(lldb) process launch\r\n\r\n","")
-    if ret_val[1].decode() != "":
-        print_error("debug server error", ret_val[1].decode())
+    if ret_val[1].decode(errors='replace') != "":
+        print_error("debug server error", ret_val[1].decode(errors='replace'))
         sys.exit()
     print("Started debug server with connection details: " + debug_info)
 
