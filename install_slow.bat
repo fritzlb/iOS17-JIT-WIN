@@ -5,7 +5,7 @@ powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://github
 powershell -command "Expand-Archive archive.zip ."
 del archive.zip
 pip install pymobiledevice3==2.46.2
-
+pip install qh3==0.15.1
 
 @echo off
 setlocal enabledelayedexpansion
