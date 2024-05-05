@@ -19,6 +19,7 @@ Install python from https://www.python.org/downloads/. Make sure to add it to yo
 Download/Clone this repo (green button -> download zip), extract the zip whereever you'd like and run install.bat by double clicking it.  
 
 # Usage
+Make sure to log in as admin.  
 Open an admin terminal by double clicking "open terminal here.bat".  
 Run `python jit_enabler_better.py {bundle_id}` by typing it into the terminal window and finish the command by pressing enter.  
 Make sure to replace {bundle_ID} with your actual bundle ID, which can be obtained e.g. inside AltStore under 'View App IDs'. If the correct one for your app doesn't show up, refresh your apps and try again.  
