@@ -1,6 +1,9 @@
-# iOS17-JIT-WIN
-Enable JIT on iOS 17 using a windows PC  
+# Warning: better alternatives
+SideJITserver does the same, but even better. It supports WiFi connections, this project does not. Please consider using that instead of this collection of scripts.  
 
+# iOS17-JIT-WIN
+Enable JIT on iOS 17 using a windows PC 
+  
 Video guide: https://youtu.be/MLHa2JLuk3Y  
   
 Tested with Windows 11 and iOS 17.3.1 as well as 17.4.  
