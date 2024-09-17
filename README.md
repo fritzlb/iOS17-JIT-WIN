@@ -21,6 +21,16 @@ The following apps have been tested by me and do work:
 Install python from https://www.python.org/downloads/. Make sure to add it to your PATH.  
 Download/Clone this repo (green button -> download zip), extract the zip whereever you'd like and run install.bat by double clicking it.  
 
+# MacOS SETUP
+
+Run this
+"""
+python3 -m venv venv
+. ./venv/bin/activate
+pip install pymobiledevice3==2.46.2
+pip install qh3==0.15.1
+"""
+
 # Usage
 Make sure to log in as admin.  
 Open an admin terminal by double clicking "open terminal here.bat".  
@@ -28,6 +38,9 @@ Run `python jit_enabler_better.py {bundle_id}` by typing it into the terminal wi
 Make sure to replace {bundle_ID} with your actual bundle ID, which can be obtained e.g. inside AltStore under 'View App IDs'. If the correct one for your app doesn't show up, refresh your apps and try again.  
 If you're using sideloadly, you can set a custom bundle ID to make things easy for you. You'll find the according settings under "advanced".  
 Be aware that simply googling the bundle ID will not work because your sideloding software will modify it. This is because every bundle ID gets registered with Apple and then belongs to that particular Xcode team, therefore it can't be used by anyone else. 
+
+# MacOS Usage
+`sudo python jit_enabler_better-mac.py {bundle_id}`
 
 # Issues
 If you do experience issues with this, please run the script in debug mode and create an issue with the terminal output. To start in debug mode, simply add "True" as another argument to the command, like this:  
