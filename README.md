@@ -22,16 +22,19 @@ Install python from https://www.python.org/downloads/. Make sure to add it to yo
 Download/Clone this repo (green button -> download zip), extract the zip whereever you'd like and run install.bat by double clicking it.  
 
 # MacOS SETUP
+Initial macOS support added by @axeleszu
 
-Run this
-"""
+Install Xcode Command line tools.
+  
+Then run the following commands, one by one:    
+```  
 python3 -m venv venv
-. ./venv/bin/activate
-pip install pymobiledevice3==2.46.2
-pip install qh3==0.15.1
-"""
+. ./venv/bin/activate  
+pip install pymobiledevice3==2.46.2  
+pip install qh3==0.15.1  
+```  
 
-# Usage
+# Usage (Windows)
 Make sure to log in as admin.  
 Open an admin terminal by double clicking "open terminal here.bat".  
 Run `python jit_enabler_better.py {bundle_id}` by typing it into the terminal window and finish the command by pressing enter.  
