@@ -18,7 +18,7 @@ The following apps have been tested by me and do work:
 - Sideloaded App requiring JIT that's been sideloaded using a supported method (AltStore, Sideloadly, other methods using developer certificates)
 
 # SETUP
-Install python from https://www.python.org/downloads/. Make sure to add it to your PATH.  
+Install python 3.12.2 from https://www.python.org/downloads/release/python-3122/. Make sure to add it to your PATH.  
 Download/Clone this repo (green button -> download zip), extract the zip whereever you'd like and run install.bat by double clicking it.  
 
 # MacOS SETUP
